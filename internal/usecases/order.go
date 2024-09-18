@@ -17,7 +17,6 @@ func (ecommerce *EcommerceUseCases) CreateOrder(ctx context.Context, order entit
 
 	// Call the repository to handle transaction and business logic
 	orderID, err := ecommerce.repo.CreateOrderTransaction(ctx, order)
-	fmt.Println("ERR ", err)
 	if err != nil {
 		return "", fmt.Errorf("could not create order: %w", err)
 	}
